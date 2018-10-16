@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 const API_KEY= "f6920ab2bd6a9edfd3233233d58f8ba1"
 
@@ -21,6 +22,8 @@ class Recipe extends React.Component {
      return (
          <div className="container">
              <div className="active-recipe">
+                 {this.state.activeRecipe.length !==0 &&
+                 <div className="active-recipe">
                  <img  className="active-recipe__img"src={recipe.image_url} alt={recipe.title}/>
                  
                  <h3 className="active-recipe__title">{ recipe.title }</h3>
@@ -34,6 +37,8 @@ class Recipe extends React.Component {
                  <Link to="/">Go Home</Link>
                  </button>
                 </h4>
+                 </div>
+                 }
              </div>
          </div>
      )   
